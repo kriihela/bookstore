@@ -9,12 +9,13 @@ import com.example.Bookstore.domain.BookRepository;
 
 @Controller
 public class BookController {
-@Autowired
-private BookRepository repository;
+
+	@Autowired
+	private BookRepository repository;
 	
-	@GetMapping("/index")
+	@GetMapping("/booklist")
 	public String getBook(Model model) {
 		model.addAttribute("books", repository.findAll());
-	return "index";
+		return "booklist";
 	}
 }

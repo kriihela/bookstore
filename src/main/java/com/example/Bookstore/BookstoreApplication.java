@@ -21,7 +21,7 @@ public class BookstoreApplication {
 		
 		Book b1 = new Book("On the Road", "Jack Kerouac", 1957, "978014118", 19.90);
 		Book b2 = new Book("The Catcher in the Rye", "J.D. Salinger", 1951, "0316769177", 14.90);
-		Book b3 = new Book("Notes from Underground", "Fyodor Dostoevsky", 1964, "067973452X", 14.90);
+		Book b3 = new Book("Notes from Underground", "Fyodor Dostoevsky", 1864, "067973452X", 14.90);
 		
 		repository.save(b1);
 		repository.save(b2);

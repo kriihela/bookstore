@@ -24,15 +24,6 @@ public class BookstoreApplication {
 	@Bean
 	public CommandLineRunner demo(BookRepository brepository, CategoryRepository crepository) {
 	return (args) -> {
-		log.info("save a couple of books");
-		Book b1 = new Book("On the Road", "Jack Kerouac", 1957, "978014118", 19.90);
-		Book b2 = new Book("The Catcher in the Rye", "J.D. Salinger", 1951, "0316769177", 14.90);
-		Book b3 = new Book("Notes from Underground", "Fyodor Dostoevsky", 1864, "067973452X", 14.90);
-		
-		brepository.save(b1);
-		brepository.save(b2);
-		brepository.save(b3);
-		
 		log.info("save a couple of categories");
 		Category c1 = new Category("Classics");
 		Category c2 = new Category("Fantasy");
@@ -43,6 +34,16 @@ public class BookstoreApplication {
 		crepository.save(c2);
 		crepository.save(c3);
 		crepository.save(c4);
+		
+		log.info("save a couple of books");
+		Book b1 = new Book("On the Road", "Jack Kerouac", 1957, "978014118", 19.90, c1);
+		Book b2 = new Book("The Catcher in the Rye", "J.D. Salinger", 1951, "0316769177", 14.90, c1);
+		Book b3 = new Book("Notes from Underground", "Fyodor Dostoevsky", 1864, "067973452X", 14.90, c1);
+		
+		brepository.save(b1);
+		brepository.save(b2);
+		brepository.save(b3);
+		
 		
 		log.info("fetch all books");
 		for (Book book : brepository.findAll()) {

@@ -96,9 +96,9 @@ public class Book {
 
 	@Override
 	public String toString() {
-		if (category != null) {
+		if (this.category != null) {
 		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", year=" + year + ", isbn=" + isbn
-				+ ", price=" + price + ", category=" + category + "]";
+				+ ", price=" + price + ", category=" + this.getCategory() + "]";
 	} else {
 		return "Book [id=" + id + ", title=" + title + ", author=" + author + ", year=" + year + ", isbn=" + isbn
 				+ ", price=" + price + "]";
